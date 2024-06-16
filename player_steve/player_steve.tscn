@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://dt5i866ckv0vo"]
+
+[ext_resource type="Texture2D" uid="uid://cb2p7fbq6c1ii" path="res://player_steve/steve.png" id="1_guu4i"]
+[ext_resource type="Script" path="res://script/CharacterBody2D.gd" id="1_p2sx7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itnmr"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(11, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpbx3"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(139, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8prg"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(267, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvixx"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(395, 0, 54, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj70m"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(71, 2, 58, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx0na"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(197, 2, 58, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v5q6"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(323, 2, 58, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2pt5"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(449, 2, 58, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnicr"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(72, 53, 59, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjf3p"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(198, 53, 59, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m73e4"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(324, 53, 59, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nc51"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(450, 53, 59, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtrpx"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(0, 52, 60, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgaf6"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(130, 52, 60, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sb32"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(260, 52, 60, 52)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d803w"]
+atlas = ExtResource("1_guu4i")
+region = Rect2(390, 52, 60, 52)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kfjn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itnmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpbx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8prg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvixx")
+}],
+"loop": true,
+"name": &"Abajo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj70m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx0na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v5q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2pt5")
+}],
+"loop": true,
+"name": &"Arriba",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnicr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjf3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m73e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nc51")
+}],
+"loop": true,
+"name": &"Derecha",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtrpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgaf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sb32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d803w")
+}],
+"loop": true,
+"name": &"Izquierda",
+"speed": 5.0
+}]
+
+[node name="player_steve" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(340, 231)
+script = ExtResource("1_p2sx7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_3kfjn")
+animation = &"Arriba"
+frame = 3
+frame_progress = 0.0985773
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+enabled = false

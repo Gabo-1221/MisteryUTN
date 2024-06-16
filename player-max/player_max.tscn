@@ -120,8 +120,8 @@ position = Vector2(155, 75)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 texture_filter = 1
-collision_layer = 9
-collision_mask = 9
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_ukpq8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
@@ -135,3 +135,4 @@ animation = &"Derecha"
 speed_scale = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+enabled = false
