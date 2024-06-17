@@ -3290,6 +3290,7 @@ texture = ExtResource("1_1aj4k")
 sources/0 = SubResource("TileSetAtlasSource_wurkk")
 
 [node name="escenario" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [104.0]
 
 [node name="capa1" type="TileMap" parent="."]
 position = Vector2(-204, 2)

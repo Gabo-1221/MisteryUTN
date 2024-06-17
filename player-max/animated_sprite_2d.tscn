@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsdnmxtdugrbv"]
+[gd_scene load_steps=19 format=3 uid="uid://dsdnmxtdugrbv"]
 
 [ext_resource type="Texture2D" uid="uid://c4ttmoapmb31q" path="res://player-max/pixilart-sprite-maxsetp2.png" id="1_fu1xx"]
 [ext_resource type="Texture2D" uid="uid://cxqcptrd5ubgv" path="res://player-max/pixilart-sprite-max2.png" id="2_oinqp"]
 [ext_resource type="Texture2D" uid="uid://dcdtvg51h72rx" path="res://player-max/pixilart-sprite-maxstep4.png" id="3_3uyve"]
+[ext_resource type="Texture2D" uid="uid://fupurndm83l5" path="res://player-max/pixilart-sprite-max1step3.png" id="4_pld0x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yfqyi"]
 atlas = ExtResource("1_fu1xx")
@@ -51,6 +52,10 @@ region = Rect2(51, 40, 51, 40)
 [sub_resource type="AtlasTexture" id="AtlasTexture_252hd"]
 atlas = ExtResource("3_3uyve")
 region = Rect2(50, 42, 50, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e36db"]
+atlas = ExtResource("4_pld0x")
+region = Rect2(0, 0, 51, 41)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3renl"]
 animations = [{
@@ -109,10 +114,18 @@ animations = [{
 "loop": true,
 "name": &"Izquierda",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e36db")
+}],
+"loop": true,
+"name": &"mantener",
+"speed": 5.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 position = Vector2(-2, -2)
 sprite_frames = SubResource("SpriteFrames_3renl")
-animation = &"Derecha"
+animation = &"mantener"
 speed_scale = 2.0
