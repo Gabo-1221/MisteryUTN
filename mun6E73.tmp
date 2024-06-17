@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://by71vu31b1kj4"]
+
+[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player_max.tscn" id="1_6yeex"]
+[ext_resource type="PackedScene" uid="uid://c8b50d407pj4h" path="res://enemigos/enemigo_gosth.tscn" id="2_r8cgu"]
+
+[node name="mundo" type="Node2D"]
+
+[node name="player_max" parent="." instance=ExtResource("1_6yeex")]
+
+[node name="enemigo_gosth" parent="." instance=ExtResource("2_r8cgu")]
+position = Vector2(327, 103)

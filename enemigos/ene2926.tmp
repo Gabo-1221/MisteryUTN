@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8b50d407pj4h"]
+
+[ext_resource type="Script" path="res://script/enemigo.gd" id="1_vjx0y"]
+[ext_resource type="Texture2D" uid="uid://n75xahlf7cki" path="res://enemigos/pixilart-sprite2.png" id="2_3sfkm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3rp8s"]
+radius = 94.1116
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6pwd"]
+radius = 13.0
+
+[node name="enemigo_gosth" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("1_vjx0y")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("2_3sfkm")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+collision_layer = 6
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("CircleShape2D_3rp8s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+light_mask = 2
+visibility_layer = 4
+shape = SubResource("CircleShape2D_f6pwd")
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_Detection_area_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_Detection_area_body_exited"]
