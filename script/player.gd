@@ -7,7 +7,7 @@ var player_alive = true
 
 var attack_ip = false
 
-const VELOCIDAD = 200
+const VELOCIDAD = 100
 var current_dir = "none"
 
 
