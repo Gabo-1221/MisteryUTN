@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://tvrj8bo4muxr"]
+
+[ext_resource type="Script" path="res://script/lapiz.gd" id="1_kf6xa"]
+[ext_resource type="Texture2D" uid="uid://bsyjwf51x0h55" path="res://icon.svg" id="2_db5ai"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mliqp"]
+radius = 8.0
+height = 64.0
+
+[node name="lapiz" type="Area2D"]
+scale = Vector2(0.4, 0.4)
+skew = -0.0506145
+collision_layer = 8
+collision_mask = 15
+script = ExtResource("1_kf6xa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0240298, 0.0240298, 0.0240298, 1)
+rotation = 1.5708
+scale = Vector2(0.09375, 0.435061)
+texture = ExtResource("2_db5ai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_mliqp")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(0, 4.17233e-07)
+scale = Vector2(0.3, 0.8)
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

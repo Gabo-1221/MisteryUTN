@@ -148,7 +148,7 @@ animations = [{
 radius = 17.1172
 
 [node name="enemigo" type="CharacterBody2D"]
-collision_mask = 3
+collision_mask = 15
 script = ExtResource("1_vjx0y")
 
 [node name="Area2D" type="Area2D" parent="."]

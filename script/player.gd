@@ -10,6 +10,9 @@ var attack_ip = false
 const VELOCIDAD = 100
 var current_dir = "none"
 
+var mochila = true
+var enfriar_lanzar = true
+var lapiz = preload("res://materiales/lapiz.tscn")
 
 func _ready():
 	$AnimatedSprite2D.play("mantener_abajo")
@@ -52,6 +55,21 @@ func player_movement(_delta):
 		velocity.y = 0
 	
 	move_and_slide()
+	lanzar_lapiz()
+
+func lanzar_lapiz():
+	var mouse_pos = get_global_mouse_position()
+	$Marker2D.look_at(mouse_pos)
+	
+	if Input.is_action_just_pressed("left_mouse") and enfriar_lanzar:
+		enfriar_lanzar = false
+		var lapiz_instance = lapiz.instantiate()
+		lapiz_instance.rotation = $Marker2D.rotation
+		lapiz_instance.global_position = $Marker2D.global_position
+		add_child(lapiz_instance)
+		
+		await get_tree().create_timer(0.2).timeout
+		enfriar_lanzar = true
 
 func play_anim(movimiento):
 	var dir = current_dir
