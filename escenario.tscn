@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cc82ck7hlivmr"]
 
 [ext_resource type="Texture2D" uid="uid://u0k8usvs6rc" path="res://Escenarios/pixil-layer-Layer 15.png" id="1_on103"]
-[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player_max.tscn" id="2_chia6"]
+[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player.tscn" id="2_chia6"]
 [ext_resource type="Texture2D" uid="uid://beg6pp4a2wlr0" path="res://Escenarios/elements.png" id="3_1h626"]
 [ext_resource type="PackedScene" uid="uid://c8b50d407pj4h" path="res://enemigos/enemigo.tscn" id="3_4dxqx"]
 

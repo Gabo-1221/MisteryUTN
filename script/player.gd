@@ -7,7 +7,7 @@ var player_alive = true
 
 var attack_ip = false
 
-const VELOCIDAD = 100
+const VELOCIDAD = 200
 var current_dir = "none"
 
 var mochila = true

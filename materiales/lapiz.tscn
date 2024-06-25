@@ -11,7 +11,7 @@ height = 64.0
 scale = Vector2(0.4, 0.4)
 skew = -0.0506145
 collision_layer = 8
-collision_mask = 15
+collision_mask = 6
 script = ExtResource("1_kf6xa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

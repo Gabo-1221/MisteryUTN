@@ -1,16 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://by71vu31b1kj4"]
 
-[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player_max.tscn" id="1_6yeex"]
+[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player.tscn" id="1_6yeex"]
 [ext_resource type="PackedScene" uid="uid://c8b50d407pj4h" path="res://enemigos/enemigo.tscn" id="2_r8cgu"]
 
 [node name="mundo" type="Node2D"]
 
-[node name="player_max" parent="." instance=ExtResource("1_6yeex")]
-position = Vector2(50, 93)
-collision_layer = 15
-collision_mask = 15
+[node name="player" parent="." instance=ExtResource("1_6yeex")]
+position = Vector2(142, 93)
+collision_layer = 12
+collision_mask = 2
 
 [node name="enemigo" parent="." instance=ExtResource("2_r8cgu")]
-position = Vector2(160, 178)
-collision_layer = 7
-collision_mask = 15
+position = Vector2(243, 138)
