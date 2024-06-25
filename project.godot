@@ -21,8 +21,8 @@ global="*res://script/global.gd"
 
 [display]
 
-window/size/viewport_width=800
-window/size/viewport_height=600
+window/size/viewport_width=400
+window/size/viewport_height=500
 
 [input]
 
@@ -68,3 +68,7 @@ left_mouse={
 2d_render/layer_2="Enemigos"
 2d_render/layer_3="Players"
 2d_render/layer_4="Lapiz"
+2d_physics/layer_1="escenarios"
+2d_physics/layer_2="enemigos"
+2d_physics/layer_3="personaje"
+2d_physics/layer_4="lapiz"

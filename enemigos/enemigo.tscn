@@ -145,11 +145,13 @@ radius = 9.0
 radius = 17.1172
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pri4e"]
-radius = 46.0
+radius = 91.0055
 
 [node name="enemigo" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 12
+y_sort_enabled = true
+collision_layer = 15
+collision_mask = 15
+slide_on_ceiling = false
 script = ExtResource("1_vjx0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -160,8 +162,8 @@ animation = &"Abajo"
 shape = SubResource("CapsuleShape2D_26hri")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 12
+collision_layer = 6
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_hitbox"]
 position = Vector2(-1, 2)
@@ -169,14 +171,15 @@ shape = SubResource("CircleShape2D_tm3rd")
 
 [node name="Area2D" type="Area2D" parent="."]
 texture_filter = 1
-collision_layer = 2
-collision_mask = 12
+collision_layer = 6
+collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_pri4e")
 
 [node name="take_damage_cooldown" type="Timer" parent="."]
+wait_time = 6.0
 
 [connection signal="area_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Detection_area_body_entered"]

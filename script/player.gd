@@ -7,7 +7,7 @@ var player_alive = true
 
 var attack_ip = false
 
-const VELOCIDAD = 200
+const VELOCIDAD = 110
 var current_dir = "none"
 
 var mochila = true
@@ -118,7 +118,7 @@ func _on_player_hitbox_body_exited(body):
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldowm == true:
 		#print("player toco enemigo")
-		health = health - 20
+		health = health - 10
 		enemy_attack_cooldowm = false
 		$Attack_timer.start()
 		print(health)

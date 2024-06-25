@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cc82ck7hlivmr"]
 
+[ext_resource type="Script" path="res://script/escenario.gd" id="1_fwebv"]
 [ext_resource type="Texture2D" uid="uid://u0k8usvs6rc" path="res://Escenarios/pixil-layer-Layer 15.png" id="1_on103"]
 [ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player.tscn" id="2_chia6"]
 [ext_resource type="Texture2D" uid="uid://beg6pp4a2wlr0" path="res://Escenarios/elements.png" id="3_1h626"]
-[ext_resource type="PackedScene" uid="uid://c8b50d407pj4h" path="res://enemigos/enemigo.tscn" id="3_4dxqx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqoa"]
 texture = ExtResource("3_1h626")
@@ -8447,12 +8447,12 @@ texture = ExtResource("1_on103")
 
 [sub_resource type="TileSet" id="TileSet_c2i3i"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/collision_mask = 6
 sources/1 = SubResource("TileSetAtlasSource_bxi18")
 sources/0 = SubResource("TileSetAtlasSource_7rqoa")
 
 [node name="escenario" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_fwebv")
 metadata/_edit_horizontal_guides_ = [104.0]
 
 [node name="capa1" type="TileMap" parent="."]
@@ -8470,10 +8470,16 @@ layer_2/y_sort_enabled = true
 layer_2/tile_data = PackedInt32Array(1245209, 65536, 18, 1638457, 917504, 10, 1966106, 0, 29)
 layer_3/name = "rampa"
 layer_3/tile_data = PackedInt32Array(1310759, 0, 11)
+layer_4/tile_data = PackedInt32Array()
 
 [node name="player_max" parent="." instance=ExtResource("2_chia6")]
-position = Vector2(360, 280)
+position = Vector2(872, 208)
 
-[node name="enemigo" parent="." instance=ExtResource("3_4dxqx")]
-position = Vector2(581, 262)
-scale = Vector2(0.640568, 0.662793)
+[node name="Camera2D" type="Camera2D" parent="player_max"]
+position = Vector2(-272, 16)
+offset = Vector2(200, 100)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

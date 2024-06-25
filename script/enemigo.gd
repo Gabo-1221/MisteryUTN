@@ -1,6 +1,6 @@
 extends  CharacterBody2D
 
-var speed = 20
+var speed = 40
 var player_chase = false
 var player = null
 
@@ -8,6 +8,7 @@ var dead = false
 var health = 100
 var player_inattack_zone = false
 var can_take_damage =  true
+
 
 func _physics_process(_delta):
 	#deal_with_damage()
@@ -24,6 +25,7 @@ func _physics_process(_delta):
 			$AnimatedSprite2D.play("Abajo")
 	if dead:
 		$Area2D/CollisionShape2D.disabled = true
+
 
 func _on_Detection_area_body_entered(body):
 	if body.has_method("player"):
@@ -62,6 +64,11 @@ func death():
 	#can_take_damage = true
 #
 
+#func handle_collisions():
+	#for collision in get_slide_count():
+		#var collision_info = get_slide_collision(collision)
+	#if collision_info.collider.is_in_group("walls"):
+		#print("Collided with a wall at ", collision_info.position)
 
 func _on_enemy_hitbox_area_entered(area):
 	var damage
