@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc82ck7hlivmr"]
+[gd_scene load_steps=9 format=3 uid="uid://cc82ck7hlivmr"]
 
 [ext_resource type="Script" path="res://script/escenario.gd" id="1_fwebv"]
 [ext_resource type="Texture2D" uid="uid://u0k8usvs6rc" path="res://Escenarios/pixil-layer-Layer 15.png" id="1_on103"]
+[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player.tscn" id="2_chia6"]
 [ext_resource type="Texture2D" uid="uid://beg6pp4a2wlr0" path="res://Escenarios/elements.png" id="3_1h626"]
+[ext_resource type="Script" path="res://script/player.gd" id="4_y04ys"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqoa"]
 texture = ExtResource("3_1h626")
@@ -8470,6 +8472,16 @@ layer_2/tile_data = PackedInt32Array(1245209, 65536, 18, 1638457, 917504, 10, 19
 layer_3/name = "rampa"
 layer_3/tile_data = PackedInt32Array(1310759, 0, 11)
 layer_4/tile_data = PackedInt32Array()
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("4_y04ys")
+
+[node name="player_max" parent="." instance=ExtResource("2_chia6")]
+position = Vector2(872, 208)
+
+[node name="Camera2D" type="Camera2D" parent="player_max"]
+position = Vector2(-272, 16)
+offset = Vector2(200, 100)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

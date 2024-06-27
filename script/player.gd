@@ -15,7 +15,7 @@ var enfriar_lanzar = true
 var lapiz = preload("res://materiales/lapiz.tscn")
 
 func _ready():
-	$AnimatedSprite2D.play("mantener_abajo")
+	$AnimatedSprite2D.play("mantener_arriba")
 
 func _physics_process(_delta):
 	player_movement(_delta)
