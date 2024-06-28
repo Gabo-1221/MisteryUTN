@@ -7,9 +7,6 @@ var personaje = load(global.player)
 
 func _ready():
 	$Timer.start()
-
-	print("Hola")
-	print("Hola", personaje)
 	var personaje_insta = personaje.instantiate()
 	personaje_insta.global_position = player_position.global_position
 	add_child(personaje_insta)

@@ -12,14 +12,11 @@ func _ready():
 
 func _on_personaje_1_pressed():
 	global.player = player1
-	print("selecionar 1")
 	get_tree().change_scene_to_file("res://escenario.tscn")
 
 func _on_personaje_2_pressed():
 	global.player = player2
-	print("selecionar 2")
 	get_tree().change_scene_to_file("res://escenario.tscn")
 
 #func _on_personaje_3_pressed():
-	#global.player = player3
 	#get_tree().change_scene_to_file("res://escenario.tscn")

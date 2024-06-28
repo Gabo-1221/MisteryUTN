@@ -14,6 +14,14 @@ var mochila = true
 var enfriar_lanzar = true
 var lapiz = preload("res://materiales/lapiz.tscn")
 
+const SCENE_FINISH_FILE ="res://materiales/game_over.tscn"
+
+
+func game_over():
+	get_tree().change_scene_to_file(SCENE_FINISH_FILE)
+	
+
+
 func _ready():
 	$AnimatedSprite2D.play("mantener_arriba")
 
@@ -25,8 +33,9 @@ func _physics_process(_delta):
 	if health <= 0:
 		player_alive = false #ir de regreso al menu or repond
 		health = 0 
-		print("jugador estado muerto")
+		#print("jugador estado muerto")
 		self.queue_free()
+		game_over()
 
 func player_movement(_delta):
 	if Input.is_action_pressed("derecha"):

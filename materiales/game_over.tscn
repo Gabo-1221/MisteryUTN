@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://xkif55b05vvv"]
+
+[ext_resource type="Script" path="res://script/GameOver.gd" id="1_r7shs"]
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_r7shs")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Game Over"
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Volver a Jugar"
+
+[connection signal="button_down" from="VBoxContainer/Button" to="." method="_on_button_button_down"]

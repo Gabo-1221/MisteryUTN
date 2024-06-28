@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://4dmew4rp15so"]
+
+[ext_resource type="Script" path="res://script/cuentaregresiva.gd" id="1_icknt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ja7xe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n1e34"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2bhne"]
+
+[node name="cuentaregresiva" type="CanvasLayer"]
+script = ExtResource("1_icknt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.0353462, 0.0353462, 0.0353462, 1)
+offset_right = 112.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("CanvasTexture_ja7xe")
+
+[node name="Label" type="Label" parent="TextureRect"]
+top_level = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.0
+offset_top = -292.0
+offset_right = -427.0
+offset_bottom = -269.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n1e34")
+text = "00"
+label_settings = SubResource("LabelSettings_2bhne")
