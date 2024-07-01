@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cc82ck7hlivmr"]
+[gd_scene load_steps=8 format=3 uid="uid://cc82ck7hlivmr"]
 
 [ext_resource type="Script" path="res://script/escenario.gd" id="1_fwebv"]
 [ext_resource type="Texture2D" uid="uid://u0k8usvs6rc" path="res://Escenarios/pixil-layer-Layer 15.png" id="1_on103"]
 [ext_resource type="PackedScene" uid="uid://bfoxvdinasrbf" path="res://Escenarios/timer.tscn" id="2_dj127"]
 [ext_resource type="Texture2D" uid="uid://beg6pp4a2wlr0" path="res://Escenarios/elements.png" id="3_1h626"]
-[ext_resource type="Script" path="res://script/GameController.gd" id="5_5wpai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqoa"]
 texture = ExtResource("3_1h626")
@@ -8479,14 +8478,7 @@ wait_time = 10.0
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(872, 176)
 
-[node name="gameController" type="Node2D" parent="."]
-visible = false
-script = ExtResource("5_5wpai")
-
-[node name="timesobrev" type="Timer" parent="gameController"]
-
 [node name="timer" parent="." instance=ExtResource("2_dj127")]
 z_index = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="gameController/timesobrev" to="gameController" method="_on_timesobrev_timeout"]

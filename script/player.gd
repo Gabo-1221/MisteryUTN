@@ -14,11 +14,10 @@ var mochila = true
 var enfriar_lanzar = true
 var lapiz = preload("res://materiales/lapiz.tscn")
 
-const SCENE_FINISH_FILE ="res://materiales/game_over.tscn"
-
+const CON_GAME = "res://materiales/GameOverScreen.tscn"
 
 func game_over():
-	get_tree().change_scene_to_file(SCENE_FINISH_FILE)
+	get_tree().change_scene_to_file(CON_GAME)
 	
 
 
