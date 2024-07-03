@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var game_controller = $"../gameController"
 @onready var time_label: Label = $Label
 @onready var timer: Timer = $Timer
 

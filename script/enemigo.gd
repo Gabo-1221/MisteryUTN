@@ -12,6 +12,7 @@ var can_take_damage =  true
 
 func _physics_process(_delta):
 	#deal_with_damage()
+	update_health()
 	if !dead:
 		$Area2D/CollisionShape2D.disabled = false
 		if player_chase:
@@ -72,7 +73,16 @@ func death():
 
 func _on_enemy_hitbox_area_entered(area):
 	var damage
-	print("dentro del area")
+	#print("dentro del area")
 	if area.has_method("lapiz_deal_damege"):
 		damage = 50
 		take_damage(damage)
+
+func update_health():
+	var health_bar = $healthBar
+	health_bar.value = health
+	
+	if health >= 100:
+		health_bar.visible = false
+	else:
+		health_bar.visible = true

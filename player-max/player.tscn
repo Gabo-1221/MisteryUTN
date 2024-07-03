@@ -38,7 +38,21 @@ shape = SubResource("CircleShape2D_gwskn")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
+[node name="healthBar" type="ProgressBar" parent="."]
+modulate = Color(0.424884, 0.678061, 1.15514e-06, 1)
+offset_left = -6.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 35.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="regin_timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="Attack_timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
+[connection signal="timeout" from="regin_timer" to="." method="_on_regin_timer_timeout"]

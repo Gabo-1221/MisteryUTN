@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j2ddaoa8n4xm"
-path="res://.godot/imported/sam4.png-03779549012e965c60f8c2cc856e05cf.ctex"
+uid="uid://c7jmafxod31t4"
+path="res://.godot/imported/pixil-frame-0.png-4c400176e953d0b794d8ee13206f75f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_sam/sam4.png"
-dest_files=["res://.godot/imported/sam4.png-03779549012e965c60f8c2cc856e05cf.ctex"]
+source_file="res://materiales/pixil-frame-0.png"
+dest_files=["res://.godot/imported/pixil-frame-0.png-4c400176e953d0b794d8ee13206f75f7.ctex"]
 
 [params]
 

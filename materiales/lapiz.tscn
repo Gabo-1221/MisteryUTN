@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://tvrj8bo4muxr"]
 
 [ext_resource type="Script" path="res://script/lapiz.gd" id="1_kf6xa"]
-[ext_resource type="Texture2D" uid="uid://bsyjwf51x0h55" path="res://icon.svg" id="2_db5ai"]
+[ext_resource type="Texture2D" uid="uid://djohycm1jg1xw" path="res://materiales/lapiz.png" id="2_3j3n7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mliqp"]
 radius = 8.0
@@ -14,11 +14,11 @@ collision_layer = 8
 collision_mask = 6
 script = ExtResource("1_kf6xa")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.0240298, 0.0240298, 0.0240298, 1)
-rotation = 1.5708
-scale = Vector2(0.09375, 0.435061)
-texture = ExtResource("2_db5ai")
+[node name="Lapiz" type="Sprite2D" parent="."]
+position = Vector2(0.253288, -5.00641)
+rotation = 0.0150473
+scale = Vector2(0.624339, 0.719402)
+texture = ExtResource("2_3j3n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

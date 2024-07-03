@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://u8rxau3r2112"
-path="res://.godot/imported/sam3.png-3748995be43885f3883cd521e489d556.ctex"
+uid="uid://djohycm1jg1xw"
+path="res://.godot/imported/lapiz.png-a498db61f93e3c60219f29be5f4d6b8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player_sam/sam3.png"
-dest_files=["res://.godot/imported/sam3.png-3748995be43885f3883cd521e489d556.ctex"]
+source_file="res://materiales/lapiz.png"
+dest_files=["res://.godot/imported/lapiz.png-a498db61f93e3c60219f29be5f4d6b8d.ctex"]
 
 [params]
 
