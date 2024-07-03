@@ -2818,12 +2818,18 @@ animation = &"mantener"
 frame_progress = 0.717467
 
 [node name="personaje3" type="Button" parent="."]
+visible = false
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 165.0
+offset_top = 249.0
+offset_right = 173.0
+offset_bottom = 260.0
+scale = Vector2(26, 26)
 
 [node name="steve" type="AnimatedSprite2D" parent="personaje3"]
 texture_filter = 1
+position = Vector2(3.96154, 5.26923)
+scale = Vector2(0.334135, 0.345216)
 sprite_frames = SubResource("SpriteFrames_4vuiq")
 animation = &"mantener"
 frame_progress = 0.36161

@@ -204,7 +204,7 @@ animations = [{
 radius = 19.0263
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pxydm"]
-radius = 7.0
+radius = 6.0
 
 [node name="player_steve" type="CharacterBody2D"]
 position = Vector2(340, 231)
@@ -216,8 +216,7 @@ script = ExtResource("1_02nqx")
 texture_filter = 1
 position = Vector2(14, -1)
 sprite_frames = SubResource("SpriteFrames_3kfjn")
-animation = &"mantener_abajo"
-frame_progress = 0.975093
+animation = &"Abajo"
 offset = Vector2(-14, 0)
 
 [node name="player_hitbox" type="Area2D" parent="."]
@@ -235,18 +234,18 @@ wait_time = 0.5
 wait_time = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 9)
+position = Vector2(1, 8)
 shape = SubResource("CircleShape2D_pxydm")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="healthBar" type="ProgressBar" parent="."]
 modulate = Color(0.424884, 0.678061, 1.15514e-06, 1)
-offset_left = -6.0
-offset_top = 8.0
+offset_left = -14.0
+offset_top = -23.0
 offset_right = 136.0
-offset_bottom = 35.0
-scale = Vector2(0.1, 0.1)
+offset_bottom = 4.0
+scale = Vector2(0.2, 0.2)
 show_percentage = false
 
 [node name="regin_timer" type="Timer" parent="."]
