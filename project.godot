@@ -21,8 +21,9 @@ global="*res://script/global.gd"
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=600
+window/size/viewport_width=990
+window/size/viewport_height=680
+window/stretch/mode="viewport"
 
 [input]
 

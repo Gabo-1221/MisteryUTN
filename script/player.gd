@@ -13,12 +13,13 @@ var current_dir = "none"
 var mochila = true
 var enfriar_lanzar = true
 var lapiz = preload("res://materiales/lapiz.tscn")
-
+@onready var label = $reloj_crono
 const CON_GAME = "res://materiales/GameOverScreen.tscn"
 
 func game_over():
-	get_tree().change_scene_to_file(CON_GAME)
 	
+	get_tree().change_scene_to_file(CON_GAME)
+
 
 
 func _ready():
@@ -29,10 +30,11 @@ func _physics_process(_delta):
 	enemy_attack()
 	attack()
 	update_health()
+	
 	if health <= 0:
 		player_alive = false #ir de regreso al menu or repond
 		health = 0 
-		#print("jugador estado muerto")
+		label.visible = false
 		self.queue_free()
 		game_over()
 

@@ -77,6 +77,7 @@ func _on_enemy_hitbox_area_entered(area):
 	if area.has_method("lapiz_deal_damege"):
 		damage = 50
 		take_damage(damage)
+		area.queue_free() 
 
 func update_health():
 	var health_bar = $healthBar

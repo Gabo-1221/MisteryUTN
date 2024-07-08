@@ -7,6 +7,7 @@ signal time_update(second_left)
 const CON_GAME = preload("res://materiales/GameOverScreen.tscn")
 
 
+
 func winner():
 	var game_over = CON_GAME.instantiate()
 	add_child(game_over)

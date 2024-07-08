@@ -155,6 +155,7 @@ slide_on_ceiling = false
 script = ExtResource("1_vjx0y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qf8bp")
 animation = &"Abajo"
 frame_progress = 0.4583

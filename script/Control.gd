@@ -1,4 +1,4 @@
-extends Node2D
+extends CanvasLayer
 
 @onready var time_label: Label = $Label
 @onready var timer: Timer = $Timer
@@ -9,7 +9,7 @@ var current_hour = 22
 var current_minute = 0 
 
 const CON_GAME = preload("res://materiales/GameOverScreen.tscn")
-
+@onready var label = $Label
 func _ready():
 	timer.wait_time = 10
 	timer.connect("timeout",Callable(self,"_on_Timer_timeout"))
@@ -35,8 +35,10 @@ func _on_Timer_timeout():
 		current_hour = 0
 	if current_hour == end_hour:
 		timer.stop()
+		label.visible = false
 		winner()
 	_update_time_label()
+
 
 func _update_time_label():
 	var hour_str = str(current_hour).pad_zeros(2)
