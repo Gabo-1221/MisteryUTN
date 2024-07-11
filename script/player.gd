@@ -9,21 +9,17 @@ var attack_ip = false
 
 const VELOCIDAD = 110
 var current_dir = "none"
-
+var next_leve : String = "res://Escenarios/menu_inicio.tscn"
 var mochila = true
 var enfriar_lanzar = true
 var lapiz = preload("res://materiales/lapiz.tscn")
 @onready var label = $reloj_crono
-const CON_GAME = "res://materiales/GameOverScreen.tscn"
-
-func game_over():
-	
-	get_tree().change_scene_to_file(CON_GAME)
-
-
+#const game_over_scene = preload("res://materiales/GameOverScreen.tscn")
+const CON_GAME = preload("res://materiales/GameOverScreen.tscn")
 
 func _ready():
 	$AnimatedSprite2D.play("mantener_arriba")
+	
 
 func _physics_process(_delta):
 	player_movement(_delta)
@@ -37,6 +33,18 @@ func _physics_process(_delta):
 		label.visible = false
 		self.queue_free()
 		game_over()
+		
+
+func game_over():
+	#var game = CON_GAME.instantiate()
+	#get_tree().root.add_child(game)
+	#game.set_title(false)
+	get_tree().change_scene_to_file("res://materiales/GameOverScreen.tscn")
+	#call_deferred("_pause_tree")
+
+func _pause_tree():
+	# Pausar el árbol de la escena
+	get_tree().paused = true
 
 func player_movement(_delta):
 	if Input.is_action_pressed("derecha"):
@@ -131,7 +139,7 @@ func enemy_attack():
 		health = health - 10
 		enemy_attack_cooldowm = false
 		$Attack_timer.start()
-		print(health)
+		#print(health)
 
 
 func _on_attack_timer_timeout():
@@ -173,6 +181,11 @@ func update_health():
 	else:
 		healthbar.visible = true
 		
+	#if health <= 0:
+		#health = 0
+		#if player_alive:  # Llamar a game_over solo una vez
+			#player_alive = false
+			#game_over()
 
 func _on_regin_timer_timeout():
 	if health < 100:
@@ -181,3 +194,4 @@ func _on_regin_timer_timeout():
 			health = 100
 	if health <= 0:
 		health = 0
+

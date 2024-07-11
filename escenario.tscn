@@ -7,12 +7,6 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqoa"]
 texture = ExtResource("3_1h626")
-34:10/size_in_atlas = Vector2i(6, 7)
-34:10/0 = 0
-34:10/0/y_sort_origin = 40
-34:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-34:10/0/physics_layer_0/angular_velocity = 0.0
-34:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.4905, 29.1682, 16.75, 29.25, 20.25, 35.75, 20.75, 50.25, -13.25, 50.75)
 42:15/size_in_atlas = Vector2i(3, 2)
 42:15/0 = 0
 42:15/0/y_sort_origin = 4
@@ -50,6 +44,12 @@ texture = ExtResource("3_1h626")
 0:29/0/y_sort_origin = -25
 0:29/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:29/0/physics_layer_0/angular_velocity = 0.0
+34:10/size_in_atlas = Vector2i(6, 7)
+34:10/0 = 0
+34:10/0/y_sort_origin = 40
+34:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+34:10/0/physics_layer_0/angular_velocity = 0.0
+34:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.4905, 29.1682, 16.75, 29.25, 20.25, 35.75, 20.75, 50.25, -13.25, 50.75)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bxi18"]
 texture = ExtResource("1_on103")
@@ -8447,6 +8447,7 @@ texture = ExtResource("1_on103")
 
 [sub_resource type="TileSet" id="TileSet_c2i3i"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
 sources/1 = SubResource("TileSetAtlasSource_bxi18")
 sources/0 = SubResource("TileSetAtlasSource_7rqoa")
 

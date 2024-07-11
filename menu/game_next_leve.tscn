@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://xkif55b05vvv"]
+[gd_scene load_steps=3 format=3 uid="uid://dqvmvhkke21wd"]
 
-[ext_resource type="Script" path="res://script/GameOver.gd" id="1_r7shs"]
+[ext_resource type="Script" path="res://script/game_next_leve.gd" id="1_jlbop"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bilo6"]
 bg_color = Color(0.175577, 0.179679, 0.181433, 1)
@@ -10,9 +10,9 @@ border_width_right = 10
 border_width_bottom = 10
 border_color = Color(0, 0, 0, 1)
 
-[node name="GameOverScreen" type="CanvasLayer"]
+[node name="GameNextLeve" type="CanvasLayer"]
 process_mode = 3
-script = ExtResource("1_r7shs")
+script = ExtResource("1_jlbop")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 15
@@ -37,8 +37,9 @@ theme_override_constants/separation = 80
 
 [node name="Title" type="Label" parent="PanelContainer/MarginContainer/Rows"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "PERDISTE"
+text = "SOBREVIVISTE"
 horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/Rows"]
@@ -51,7 +52,7 @@ theme_override_constants/separation = 40
 [node name="ActionButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
-text = "Volver a jugar"
+text = "Siguiente Nivel"
 
 [node name="SalirButton" type="Button" parent="PanelContainer/MarginContainer/Rows/CenterContainer/VBoxContainer"]
 layout_mode = 2
