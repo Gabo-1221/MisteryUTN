@@ -9,7 +9,6 @@ var health = 100
 var player_inattack_zone = false
 var can_take_damage =  true
 
-
 func _physics_process(_delta):
 	#deal_with_damage()
 	update_health()
@@ -17,6 +16,7 @@ func _physics_process(_delta):
 		$Area2D/CollisionShape2D.disabled = false
 		if player_chase:
 			position += (player.position - position)/speed
+			
 			$AnimatedSprite2D.play("Abajo")
 			if(player.position.x - position.x) < 0:
 				$AnimatedSprite2D.flip_h = true

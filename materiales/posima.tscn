@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://10xyh0f0d3av"]
+
+[ext_resource type="Texture2D" uid="uid://cd0jqbtin6x4" path="res://materiales/posima.png" id="1_jfohg"]
+[ext_resource type="Script" path="res://script/posima.gd" id="1_rqna3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6h6wu"]
+
+[node name="posima" type="Area2D"]
+scale = Vector2(0.400039, 0.3325)
+script = ExtResource("1_rqna3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, 2)
+texture = ExtResource("1_jfohg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6h6wu")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

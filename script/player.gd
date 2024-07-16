@@ -2,12 +2,13 @@ extends CharacterBody2D
 
 var enemy_inattack_range = false
 var enemy_attack_cooldowm = true
+var things_attack_pos = false
 var health = 100
 var player_alive = true
 
 var attack_ip = false
 
-const VELOCIDAD = 110
+var VELOCIDAD = 110
 var current_dir = "none"
 var next_leve : String = "res://Escenarios/menu_inicio.tscn"
 var mochila = true
@@ -24,7 +25,7 @@ func _ready():
 func _physics_process(_delta):
 	player_movement(_delta)
 	enemy_attack()
-	attack()
+	#attack()
 	update_health()
 	
 	if health <= 0:
@@ -141,31 +142,35 @@ func enemy_attack():
 		$Attack_timer.start()
 		#print(health)
 
+func lentitud():
+		VELOCIDAD = 50
+		health = health - 5
+		$lentitud.start(10)
+
 
 func _on_attack_timer_timeout():
 	enemy_attack_cooldowm = true
 	
 
-func attack():
-	var dir = current_dir
-	if Input. is_action_just_pressed("ataque"):
-		print("ataque")
-		global.player_current_attack  = true
-		attack_ip =  true
-		if dir == "derecha":
-			$AnimatedSprite2D.flip_h = false
-			$AnimatedSprite2D.play("mantener_derecha")
-			$deal_attack_timer.start()
-		if dir == "izquierda":
-			$AnimatedSprite2D.flip_h = true
-			$AnimatedSprite2D.play("mantener_izquierda")
-			$deal_attack_timer.start()
-		if dir == "arriba":
-			$AnimatedSprite2D.play("mantener_arriba")
-			$deal_attack_timer.start()
-		if dir == "abajo":
-			$AnimatedSprite2D.play("mantener_abajo")
-			$deal_attack_timer.start()
+#func attack():
+	#var dir = current_dir
+	#if Input. is_action_just_pressed("ataque"):
+		#global.player_current_attack  = true
+		#attack_ip =  true
+		#if dir == "derecha":
+			#$AnimatedSprite2D.flip_h = false
+			#$AnimatedSprite2D.play("mantener_derecha")
+			#$deal_attack_timer.start()
+		#if dir == "izquierda":
+			#$AnimatedSprite2D.flip_h = true
+			#$AnimatedSprite2D.play("mantener_izquierda")
+			#$deal_attack_timer.start()
+		#if dir == "arriba":
+			#$AnimatedSprite2D.play("mantener_arriba")
+			#$deal_attack_timer.start()
+		#if dir == "abajo":
+			#$AnimatedSprite2D.play("mantener_abajo")
+			#$deal_attack_timer.start()
 
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
@@ -181,11 +186,6 @@ func update_health():
 	else:
 		healthbar.visible = true
 		
-	#if health <= 0:
-		#health = 0
-		#if player_alive:  # Llamar a game_over solo una vez
-			#player_alive = false
-			#game_over()
 
 func _on_regin_timer_timeout():
 	if health < 100:
@@ -195,3 +195,10 @@ func _on_regin_timer_timeout():
 	if health <= 0:
 		health = 0
 
+func _on_lentitud_timeout():
+	VELOCIDAD = 110
+
+func _on_area_2d_area_entered(area):
+	if area.has_method("touch_posima"):
+		lentitud()
+		area.queue_free() 

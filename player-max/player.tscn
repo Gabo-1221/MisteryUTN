@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfuyg1bl3fl0o"]
+[gd_scene load_steps=7 format=3 uid="uid://dfuyg1bl3fl0o"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_5wpfc"]
 [ext_resource type="PackedScene" uid="uid://dsdnmxtdugrbv" path="res://player-max/animated_sprite_2d.tscn" id="2_b2j6n"]
 [ext_resource type="PackedScene" uid="uid://bfoxvdinasrbf" path="res://Escenarios/timer.tscn" id="3_8nwol"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78aov"]
+radius = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l1ax0"]
 radius = 13.0384
@@ -20,7 +23,14 @@ script = ExtResource("1_5wpfc")
 position = Vector2(0, -5)
 animation = &"Derecha"
 
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -6)
+shape = SubResource("CircleShape2D_78aov")
+
 [node name="player_hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 2
 
@@ -65,8 +75,12 @@ position_smoothing_speed = 10.0
 
 [node name="reloj_crono" parent="." instance=ExtResource("3_8nwol")]
 
+[node name="lentitud" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="Attack_timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
 [connection signal="timeout" from="regin_timer" to="." method="_on_regin_timer_timeout"]
+[connection signal="timeout" from="lentitud" to="." method="_on_lentitud_timeout"]

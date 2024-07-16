@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b4iw1kpcsr32y"]
+[gd_scene load_steps=24 format=3 uid="uid://b4iw1kpcsr32y"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_02nqx"]
 [ext_resource type="Texture2D" uid="uid://murxqi054chr" path="res://player_steve/steve_play.png" id="2_trase"]
@@ -201,6 +201,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lqms2"]
+radius = 14.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_vqso8"]
 radius = 19.0263
 
@@ -220,7 +223,15 @@ sprite_frames = SubResource("SpriteFrames_3kfjn")
 animation = &"Abajo"
 offset = Vector2(-14, 0)
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -6)
+shape = SubResource("CircleShape2D_lqms2")
+
 [node name="player_hitbox" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 2
 
@@ -264,8 +275,12 @@ position_smoothing_speed = 10.0
 
 [node name="reloj_crono" parent="." instance=ExtResource("3_kpyrn")]
 
+[node name="lentitud" type="Timer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="Attack_timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
 [connection signal="timeout" from="regin_timer" to="." method="_on_regin_timer_timeout"]
+[connection signal="timeout" from="lentitud" to="." method="_on_lentitud_timeout"]

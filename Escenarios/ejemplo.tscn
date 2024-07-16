@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvjhncpep70te"]
+
+[ext_resource type="PackedScene" uid="uid://c65jd0x6vomk8" path="res://enemigos/bruja.tscn" id="1_7clmv"]
+[ext_resource type="PackedScene" uid="uid://dfuyg1bl3fl0o" path="res://player-max/player.tscn" id="2_aipah"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_aipah")]
+
+[node name="bruja" parent="." instance=ExtResource("1_7clmv")]
+position = Vector2(389, 240)
