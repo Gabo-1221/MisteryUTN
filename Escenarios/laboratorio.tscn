@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl1eqo68k8qqh"]
+
+[ext_resource type="Script" path="res://script/laboratorio.gd" id="1_boqtb"]
+
+[node name="laboratorio" type="Node2D"]
+script = ExtResource("1_boqtb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 991.0
+offset_bottom = 685.0
+color = Color(0, 0, 0, 1)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(408, 509)

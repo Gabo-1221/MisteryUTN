@@ -18,12 +18,9 @@ func _ready():
 
 var leve = global.leve
 
-func escoger_aleatorio(arreglo):
-	var indice_aleatorio = randi() % arreglo.size()
-	return arreglo[indice_aleatorio]
-
 var posicion_esc_estacion = [
 	Vector2(random.randi_range(45,980),random.randi_range(170,374)),
+	Vector2(random.randi_range(380,800),random.randi_range(200,320)),
 	Vector2(random.randi_range(920,970),random.randi_range(385,645)),
 	Vector2(random.randi_range(418,440),random.randi_range(400,630)),
 	Vector2(random.randi_range(323,337),random.randi_range(588,610))
@@ -39,26 +36,26 @@ var posicion_esc_piscina = [
 
 func _on_timer_timeout():
 	if leve == "nivel1":
-		var posicion =  escoger_aleatorio(posicion_esc_estacion)
 		var enemigo_ins = fantasma.instantiate()
-		enemigo_ins.position = posicion
+		enemigo_ins.position = posicion_esc_estacion[randi_range(0,4)]
 		add_child(enemigo_ins)
 	elif leve == "nivel2":
-		var posicion = escoger_aleatorio(posicion_esc_piscina)
 		var enemigo_ins = esqueleto.instantiate()
-		enemigo_ins.position = posicion
+		enemigo_ins.position = posicion_esc_piscina[randi_range(0,4)]
 		add_child(enemigo_ins)
 
 
 func _on_spwan_bruja_timeout():
 	if leve == "nivel1":
-		var posicion = escoger_aleatorio(posicion_esc_piscina)
 		var bruja_inst = bruja.instantiate()
-		bruja_inst.position = posicion
+		bruja_inst.position = posicion_esc_estacion[randi_range(0,4)]
 		add_child(bruja_inst)
 	elif leve == "nivel2":
-		var posicion = escoger_aleatorio(posicion_esc_piscina)
 		var bruja_inst = bruja.instantiate()
-		bruja_inst.position = posicion
+		bruja_inst.position = posicion_esc_piscina[randi_range(0,4)]
 		add_child(bruja_inst)
 
+
+
+func _on_audio_stream_player_2d_finished():
+	pass # Replace with function body.

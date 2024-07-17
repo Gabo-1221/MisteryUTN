@@ -8,14 +8,13 @@ var player_alive = true
 
 var attack_ip = false
 
-var VELOCIDAD = 110
+var VELOCIDAD = 80
 var current_dir = "none"
 var next_leve : String = "res://Escenarios/menu_inicio.tscn"
 var mochila = true
 var enfriar_lanzar = true
 var lapiz = preload("res://materiales/lapiz.tscn")
 @onready var label = $reloj_crono
-#const game_over_scene = preload("res://materiales/GameOverScreen.tscn")
 const CON_GAME = preload("res://materiales/GameOverScreen.tscn")
 
 func _ready():
@@ -136,22 +135,20 @@ func _on_player_hitbox_body_exited(body):
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldowm == true:
-		#print("player toco enemigo")
 		health = health - 10
 		enemy_attack_cooldowm = false
 		$Attack_timer.start()
-		#print(health)
 
 func lentitud():
-		VELOCIDAD = 50
-		health = health - 5
-		$lentitud.start(10)
+	VELOCIDAD = 25
+	health = health - 5
+	$lentitud.start(10)
 
 
 func _on_attack_timer_timeout():
 	enemy_attack_cooldowm = true
 	
-
+#prieba de ataque cercano
 #func attack():
 	#var dir = current_dir
 	#if Input. is_action_just_pressed("ataque"):
@@ -185,7 +182,6 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true
-		
 
 func _on_regin_timer_timeout():
 	if health < 100:
@@ -196,9 +192,18 @@ func _on_regin_timer_timeout():
 		health = 0
 
 func _on_lentitud_timeout():
-	VELOCIDAD = 110
+	VELOCIDAD
 
 func _on_area_2d_area_entered(area):
 	if area.has_method("touch_posima"):
 		lentitud()
 		area.queue_free() 
+
+
+#prieba de cambio
+#var leve = global.leve
+#func chance_escene(nueva_escena): 
+	#var leve = global.leve
+	#var time = global.time_person
+	#global.save_datos(leve, health, time)
+	#get_tree().change_scene_to_file("res://Escenarios/laboratorio.tscn")

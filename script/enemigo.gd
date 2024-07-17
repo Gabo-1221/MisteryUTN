@@ -1,6 +1,6 @@
 extends  CharacterBody2D
 
-var speed = 40
+var speed = 60
 var player_chase = false
 var player = null
 
@@ -16,17 +16,16 @@ func _physics_process(_delta):
 		$Area2D/CollisionShape2D.disabled = false
 		if player_chase:
 			position += (player.position - position)/speed
-			
 			$AnimatedSprite2D.play("Abajo")
+			
 			if(player.position.x - position.x) < 0:
 				$AnimatedSprite2D.flip_h = true
 			else:
 				$AnimatedSprite2D.flip_h = false
 		else:
-			$AnimatedSprite2D.play("Abajo")
+			$AnimatedSprite2D.play("mantener_abajo")
 	if dead:
 		$Area2D/CollisionShape2D.disabled = true
-
 
 func _on_Detection_area_body_entered(body):
 	if body.has_method("player"):
@@ -40,7 +39,6 @@ func _on_Detection_area_body_exited(body):
 func enemigo():
 	pass
   
-
 func take_damage(damage):
 	health = health - damage
 	if health <= 0 and !dead:
@@ -50,6 +48,7 @@ func death():
 	dead = true
 	queue_free()
 
+#Pruebas de nuevas formas de ataque y colision
 #func deal_with_damage():
 	#if player_inattack_zone and global.player_current_attack == true:
 		##if can_take_damage == true:
@@ -60,11 +59,9 @@ func death():
 			#if health <= 0:
 				#self.queue_free()
 #
-
 #func _on_take_damage_cooldown_timeout():
 	#can_take_damage = true
 #
-
 #func handle_collisions():
 	#for collision in get_slide_count():
 		#var collision_info = get_slide_collision(collision)
@@ -75,7 +72,7 @@ func _on_enemy_hitbox_area_entered(area):
 	var damage
 	#print("dentro del area")
 	if area.has_method("lapiz_deal_damege"):
-		damage = 50
+		damage = 20
 		take_damage(damage)
 		area.queue_free() 
 

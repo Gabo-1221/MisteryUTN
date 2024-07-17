@@ -12,7 +12,7 @@ var leve = global.leve
 const CON_GAME = preload("res://materiales/GameOverScreen.tscn")
 @onready var label = $Label
 func _ready():
-	timer.wait_time = 10
+	timer.wait_time = 60
 	timer.connect("timeout",Callable(self,"_on_Timer_timeout"))
 	timer.start()
 	_update_time_label()
@@ -31,7 +31,6 @@ func loser():
 	
 func _on_Timer_timeout():
 	current_hour +=1
-	
 	if current_hour >= 24:
 		current_hour = 0
 	if current_hour == end_hour:

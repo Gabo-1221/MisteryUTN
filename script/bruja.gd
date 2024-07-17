@@ -43,7 +43,7 @@ func launch_things(ubicacion):
 		posima_instante.rotation = direction.angle()
 		add_child(posima_instante)
 		
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.8).timeout
 		enfriar_lanzar = true
 
 func enemigo():
@@ -53,7 +53,7 @@ func _on_enemy_hitbox_area_entered(area):
 	var damage
 	#print("dentro del area")
 	if area.has_method("lapiz_deal_damege"):
-		damage = 50
+		damage = 30
 		take_damage(damage)
 		area.queue_free() 
 

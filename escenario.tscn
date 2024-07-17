@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc82ck7hlivmr"]
+[gd_scene load_steps=9 format=3 uid="uid://cc82ck7hlivmr"]
 
 [ext_resource type="Script" path="res://script/escenario.gd" id="1_fwebv"]
 [ext_resource type="Texture2D" uid="uid://u0k8usvs6rc" path="res://Escenarios/pixil-layer-Layer 15.png" id="1_on103"]
 [ext_resource type="Texture2D" uid="uid://beg6pp4a2wlr0" path="res://Escenarios/elements.png" id="3_1h626"]
-[ext_resource type="AudioStream" uid="uid://daj18bwvb64ni" path="res://music/Video sin título ‐ Hecho con Clipchamp - Converted with FlexClip.mp3" id="5_5kxyg"]
+[ext_resource type="AudioStream" uid="uid://cfjcunrhbgvup" path="res://music/The Witch_s House OST _1 - Cellar(MP3_160K).mp3" id="4_2anyq"]
+[ext_resource type="Script" path="res://script/AudioStreamPlayer2D.gd" id="5_nimhj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rqoa"]
 texture = ExtResource("3_1h626")
@@ -44,6 +45,7 @@ texture = ExtResource("3_1h626")
 0:29/0/y_sort_origin = -25
 0:29/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:29/0/physics_layer_0/angular_velocity = 0.0
+0:29/0/physics_layer_0/polygon_0/points = PackedVector2Array(-159, -6.5, 144, -6.5, 145, 55.5, 136, 77.5, -147, 75.5, -159, 51.5)
 34:10/size_in_atlas = Vector2i(6, 7)
 34:10/0 = 0
 34:10/0/y_sort_origin = 40
@@ -3003,11 +3005,11 @@ texture = ExtResource("1_on103")
 13:35/0 = 0
 13:35/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:35/0/physics_layer_0/angular_velocity = 0.0
-13:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 7.03125, 8, 6.90625, 0.21875, 8, 0.03125)
+13:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:35/0 = 0
 12:35/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:35/0/physics_layer_0/angular_velocity = 0.0
-12:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -0.03125, -4.96875, -0.09375, -5.09375, 8)
+12:35/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 11:35/0 = 0
 11:35/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:35/0/physics_layer_0/angular_velocity = 0.0
@@ -8475,17 +8477,19 @@ layer_3/tile_data = PackedInt32Array(1310759, 0, 11)
 layer_4/tile_data = PackedInt32Array()
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 8.0
+wait_time = 5.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(872, 176)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_5kxyg")
-autoplay = true
+position = Vector2(863, 171)
 
 [node name="spwan_bruja" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 8.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_2anyq")
+autoplay = true
+script = ExtResource("5_nimhj")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="spwan_bruja" to="." method="_on_spwan_bruja_timeout"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

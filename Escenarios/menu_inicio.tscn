@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://dw8ec1bquyg3h"]
+[gd_scene load_steps=20 format=3 uid="uid://dw8ec1bquyg3h"]
 
 [ext_resource type="Texture2D" uid="uid://dq3hr53ig513q" path="res://menu/menu.png" id="1_3w8uf"]
 [ext_resource type="Script" path="res://script/menu_inicio.gd" id="1_anwes"]
 [ext_resource type="Texture2D" uid="uid://dlvjqd8r2g3dn" path="res://player-max/max_v2.png" id="3_8tymq"]
 [ext_resource type="Texture2D" uid="uid://bptksqwh0mwha" path="res://player_sam/sam_play.png" id="4_0bryc"]
 [ext_resource type="Texture2D" uid="uid://murxqi054chr" path="res://player_steve/steve_play.png" id="5_xnn7s"]
+[ext_resource type="AudioStream" uid="uid://daj18bwvb64ni" path="res://music/Video sin título ‐ Hecho con Clipchamp - Converted with FlexClip.mp3" id="6_fpi08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xsc0f"]
 texture = ExtResource("1_3w8uf")
@@ -2809,6 +2810,7 @@ offset_top = 324.0
 offset_right = 746.0
 offset_bottom = 332.0
 scale = Vector2(25.6255, 35.7751)
+focus_mode = 0
 
 [node name="sam" type="AnimatedSprite2D" parent="personaje2"]
 texture_filter = 1
@@ -2826,6 +2828,7 @@ offset_top = 325.0
 offset_right = 139.0
 offset_bottom = 336.0
 scale = Vector2(26, 26)
+focus_mode = 0
 
 [node name="steve" type="AnimatedSprite2D" parent="personaje3"]
 texture_filter = 1
@@ -2834,6 +2837,10 @@ scale = Vector2(0.334135, 0.345216)
 sprite_frames = SubResource("SpriteFrames_4vuiq")
 animation = &"mantener"
 frame_progress = 0.36161
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fpi08")
+autoplay = true
 
 [connection signal="pressed" from="personaje1" to="." method="_on_personaje_1_pressed"]
 [connection signal="pressed" from="personaje2" to="." method="_on_personaje_2_pressed"]

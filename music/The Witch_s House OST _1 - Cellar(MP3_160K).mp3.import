@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfjcunrhbgvup"
+path="res://.godot/imported/The Witch_s House OST _1 - Cellar(MP3_160K).mp3-6205d7bd5f0c69aab72202c80097d786.mp3str"
+
+[deps]
+
+source_file="res://music/The Witch_s House OST _1 - Cellar(MP3_160K).mp3"
+dest_files=["res://.godot/imported/The Witch_s House OST _1 - Cellar(MP3_160K).mp3-6205d7bd5f0c69aab72202c80097d786.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

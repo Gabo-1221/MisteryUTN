@@ -240,6 +240,8 @@ radius = 17.1172
 radius = 91.0055
 
 [node name="bruja" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_no6gu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -251,6 +253,8 @@ animation = &"Abajo"
 frame_progress = 0.9533
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 7
 shape = SubResource("CapsuleShape2D_re86j")
 
 [node name="enemy_hitbox" type="Area2D" parent="."]
@@ -263,7 +267,7 @@ shape = SubResource("CircleShape2D_7qknj")
 
 [node name="Area2D" type="Area2D" parent="."]
 texture_filter = 1
-collision_layer = 6
+collision_layer = 2
 collision_mask = 14
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
