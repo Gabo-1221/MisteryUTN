@@ -12,7 +12,7 @@ var leve = global.leve
 const CON_GAME = preload("res://materiales/GameOverScreen.tscn")
 @onready var label = $Label
 func _ready():
-	timer.wait_time = 60
+	timer.wait_time = 40
 	timer.connect("timeout",Callable(self,"_on_Timer_timeout"))
 	timer.start()
 	_update_time_label()

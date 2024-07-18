@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="Mistery Utn"
+config/description="Sobrevive dentro de la Universidad de los fantasmas, esqueletos y brujas"
+config/version="1"
 run/main_scene="res://Escenarios/menu_inicio.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://posimas.png"
 
 [autoload]
 

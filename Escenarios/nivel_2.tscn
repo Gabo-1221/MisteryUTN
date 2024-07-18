@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4mqqkxuqtl05"]
+[gd_scene load_steps=20 format=3 uid="uid://c4mqqkxuqtl05"]
 
 [ext_resource type="Texture2D" uid="uid://dutamc5p7oeus" path="res://Escenarios/pscina.png" id="1_2tadb"]
 [ext_resource type="Script" path="res://script/escenario.gd" id="1_8fnsm"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://eqbvxf71wm4v" path="res://materiales/agua2.png" id="5_h1ovk"]
 [ext_resource type="AudioStream" uid="uid://btvb7cgc0h60q" path="res://music/The Witch_s House OST _7 - Outline(MP3_128K).mp3" id="7_g8p36"]
 [ext_resource type="Script" path="res://script/AudioStreamPlayer2D.gd" id="8_ta33f"]
+[ext_resource type="Texture2D" uid="uid://c8vwhl8nu2x7q" path="res://materiales/letras.png" id="9_mgm20"]
+[ext_resource type="Texture2D" uid="uid://b3uapn85ylnk4" path="res://materiales/flechas.png" id="10_ltoiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_70iya"]
 texture = ExtResource("1_2tadb")
@@ -8746,6 +8748,30 @@ wait_time = 8.0
 stream = ExtResource("7_g8p36")
 autoplay = true
 script = ExtResource("8_ta33f")
+
+[node name="Letras" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(138.902, 664)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("9_mgm20")
+
+[node name="Flechas" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(28.9022, 664)
+scale = Vector2(0.420346, 0.407069)
+texture = ExtResource("10_ltoiy")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 5
+offset_left = 46.9022
+offset_top = 622.0
+offset_right = 183.902
+offset_bottom = 671.0
+scale = Vector2(0.641018, 0.645063)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Con clic Izquierdo 
+del raton lanzas"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="spwan_bruja" to="." method="_on_spwan_bruja_timeout"]

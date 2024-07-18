@@ -192,7 +192,7 @@ func _on_regin_timer_timeout():
 		health = 0
 
 func _on_lentitud_timeout():
-	VELOCIDAD
+	VELOCIDAD = 80
 
 func _on_area_2d_area_entered(area):
 	if area.has_method("touch_posima"):
